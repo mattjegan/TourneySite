@@ -12,14 +12,14 @@ def index(request):
 
     return render(request, 'poker/index.html', {
         'title': title,
-        })
+    })
 
 def blindsStructure(request):
     title = "Blinds Structure Calculator"
 
     return render(request, 'poker/blinds.html', {
         'title': title,
-        })
+    })
 
 def stackCalculator(request):
     title = "Initial Stack Calculator"
@@ -27,7 +27,7 @@ def stackCalculator(request):
     return render(request, 'poker/stackCalc.html', {
         'title': title,
         'valArray': [0 for i in range(chipArrayLen)],
-        })
+    })
 
 def chipDistribution(request):
     title = "Chip Distribution Calculator"
@@ -35,14 +35,14 @@ def chipDistribution(request):
     return render(request, 'poker/chipDist.html', {
         'title': title,
         'valArray': [0 for i in range(chipArrayLen)],
-        })
+    })
 
 def prizePoolDistribution(request):
     title = "Prize Pool Distribution Calculator"
 
     return render(request, 'poker/prizeDist.html', {
         'title': title,
-        })
+    })
 
 def processBlinds(request):
 
@@ -59,14 +59,13 @@ def processBlinds(request):
         structure, period = director.blindsStructure(startingStack, hours)
         title = "Blinds Structure"
 
-        ##HttpResponse(str(structure) + " " + str(period))
         return render(request, 'poker/blindsStructure.html', {
             'title': title,
             'hours': hours,
             'stack': startingStack,
             'structure': structure,
             'period': period,
-            })
+        })
 
 def processChipDist(request):
 
@@ -74,7 +73,7 @@ def processChipDist(request):
         startingStack = int(request.POST['stack'])
         if startingStack == 0: raise ValueError("The stack must be greater than 0")
 
-        ## Get chip values
+        # Get chip values
         chipArray = []
         for i in range(chipArrayLen):
             chipArray.append(int(request.POST['chip_' + str(i)]))
@@ -90,7 +89,7 @@ def processChipDist(request):
             'title': title,
             'stack': startingStack,
             'chipDistribution': director.chipDist(startingStack, chipArray),
-            })
+        })
 
 def processStackCalc(request):
 
@@ -140,5 +139,4 @@ def processPrize(request):
             'title': title,
             'distType': dist,
             'dist': director.prizeDist(dist),
-            })
-
+        })

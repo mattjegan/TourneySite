@@ -4,6 +4,7 @@
     <head>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'poker/style.css' %}">
     </head>
     <body>
         <h1>{{ title }}</h1>
@@ -29,13 +30,7 @@
 
         <div class="jumbotron">
             <h1>Welcome!</h1>
-            <p>This is our poker tournament helper site. Below you will find some useful tools to get your tournament rolling:</p>
-            <div class="btn-group" role="group">
-                <a href="{% url 'poker:blinds' %}" class="btn btn-default" role="button">Blinds Structure Calculator</a>
-                <a href="{% url 'poker:stackCalc' %}" class="btn btn-default" role="button">Initial Stack Calculator</a>
-                <a href="{% url 'poker:chipDist' %}" class="btn btn-default" role="button">Chip Distribution Calculator</a>
-                <a href="{% url 'poker:prizeDist' %}" class="btn btn-default" role="button">Prize Pool Distribution Calculator</a>
-            </div>
+            <p>This is our poker tournament helper site. This site provides a number of tools useful in the planning of poker tournaments.</p>
         </div>
     </body>
 </html>

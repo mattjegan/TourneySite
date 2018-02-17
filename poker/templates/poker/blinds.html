@@ -4,6 +4,7 @@
     <head>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'poker/style.css' %}">
         <script type="text/javascript">
             function updateTextVal(elName, val) {
                 document.getElementById(elName.concat('_textInput')).value = val;
@@ -39,7 +40,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4"></div>
-                <div class="col-md-4">
+                <div class="col-md-4 center-panel">
                     {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
                     <form action="{% url 'poker:processBlinds' %}" method="post">

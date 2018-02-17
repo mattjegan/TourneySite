@@ -4,6 +4,7 @@
     <head>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'poker/style.css' %}">
     </head>
     <body>
         <h1>{{ title }}</h1>
@@ -30,7 +31,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4"></div>
-                <div class="col-md-4">
+                <div class="col-md-4 center-panel">
 
                     <p>With a starting stack of {{ stack }} the chip distribution is:</p>
 
