@@ -1,0 +1,48 @@
+{% load staticfiles %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css">
+    </head>
+    <body>
+        <h1>{{ title }}</h1>
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+               <!-- Brand and toggle get grouped for better mobile display -->
+               <div class="navbar-header">
+                    <a class="navbar-brand" href="{% url 'poker:index' %}">Tournament Helper</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'poker:blinds' %}">Blinds Structure Calculator</a></li>
+                        <li><a href="{% url 'poker:stackCalc' %}">Initial Stack Calculator</a></li>
+                        <li><a href="{% url 'poker:chipDist' %}">Chip Distribution Calculator</a></li>
+                        <li><a href="{% url 'poker:prizeDist' %}">Prize Pool Distribution Calculator</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+
+                    <p>With a {{ distType }} distribution the prize pool payout is:</p>
+
+                    <ol>
+                    {% for prize in dist %}
+                        <li>{{ prize }}</li>
+                    {% endfor %}
+                    </ol>
+
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </body>
+</html>
