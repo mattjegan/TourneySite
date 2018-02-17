@@ -1,6 +1,6 @@
 # Poker Tournament Tools Site
 
-This project aims to implement a simple [Django] site to provide various useful tools for organising poker tournaments. The current tools available include:
+This project aims to implement a simple [Django](https://www.djangoproject.com/) site to provide various useful tools for organising poker tournaments. The current tools available include:
 
 - A blinds structure calculator
 - An initial stack calculator
@@ -10,8 +10,8 @@ This project aims to implement a simple [Django] site to provide various useful 
 ## Installation
 
 Requires:
-- Python3.6+
-- Pipenv
+- [Python3.6+](https://www.python.org/downloads/release/python-364/)
+- [Pipenv](https://github.com/pypa/pipenv)
 
 Clone the repository
 
